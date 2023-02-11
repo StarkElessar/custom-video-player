@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/index.js" defer></script>
+  <title>Custom Video Player</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main class="page page_start">
+      <div class="page__container">
+        <div class="v-player _v-pause _v-sound-on" data-v-player tabindex="0">
+          <video src="videos/video.mp4"></video>
+          <div class="v-player__bottom">
+            <div class="v-player-timeline">
+              <div class="v-player-timeline__progress-area">
+                <span class="v-player-timeline__time">00:00</span>
+                <div class="v-player-timeline__progress-bar" data-progres-bar></div>
+              </div>
+            </div>
+            <div class="v-player-controls">
+              <div class="v-player-controls__items v-player-controls__items_left">
+                <button class="v-player-controls__volume v-player-button" type="button" data-mute>
+                  <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                    <path d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 
+                      223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 
+                      398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 
+                      33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 
+                      113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 
+                      341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 
+                      33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 
+                      8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 
+                      256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 
+                      34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 
+                      352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 
+                      40.1c9.4-8.4 22.9-10.4 34.4-5.3z" />
+                  </svg>
+                  <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path
+                      d="M320 64c0-12.6-7.4-24-18.9-29.2s-25-3.1-34.4 5.3L131.8 160H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64h67.8L266.7 471.9c9.4 8.4 22.9 10.4 34.4 5.3S320 460.6 320 448V64z" />
+                  </svg>
+                </button>
+                <input class="v-player-controls__slider slider-progress" type="range" min="0" max="1" step="0.05"
+                  data-volume>
+                <div class="v-player-controls__timer">
+                  <span class="v-player-controls__current-time" data-current-time>00:00</span>
+                  <span class="v-player-controls__separator">/</span>
+                  <span class="v-player-controls__duration" data-duration>00:00</span>
+                </div>
+              </div>
+              <div class="v-player-controls__items v-player-controls__items_center">
+                <button class="v-player-controls__skip-backward v-player-button" type="button" data-skip-backward>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M459.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4L288 214.3V256v41.7L459.5 440.6zM256 352V256 128 96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160C4.2 237.5 0 246.5 0 256s4.2 18.5 11.5 24.6l192 160c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V352z" />
+                  </svg>
+                </button>
+                <button class="v-player-controls__play-pause v-player-button" type="button" data-play>
+                  <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <path
+                      d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                  </svg>
+                  <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path
+                      d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z" />
+                  </svg>
+                </button>
+                <button class="v-player-controls__skip-forward v-player-button" type="button" data-skip-forward>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4L224 214.3V256v41.7L52.5 440.6zM256 352V256 128 96c0-12.4 7.2-23.7 18.4-29s24.5-3.6 34.1 4.4l192 160c7.3 6.1 11.5 15.1 11.5 24.6s-4.2 18.5-11.5 24.6l-192 160c-9.5 7.9-22.8 9.7-34.1 4.4s-18.4-16.6-18.4-29V352z" />
+                  </svg>
+                </button>
+              </div>
+              <div class="v-player-controls__items v-player-controls__items_right">
+                <div class="v-player-controls__playback-content">
+                  <button class="v-player-controls__playback-speed v-player-button" type="button" data-speed-button>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path
+                        d="M0 416c0-17.7 14.3-32 32-32l54.7 0c12.3-28.3 40.5-48 73.3-48s61 19.7 73.3 48L480 384c17.7 0 32 14.3 32 32s-14.3 32-32 32l-246.7 0c-12.3 28.3-40.5 48-73.3 48s-61-19.7-73.3-48L32 448c-17.7 0-32-14.3-32-32zm192 0a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM384 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm-32-80c32.8 0 61 19.7 73.3 48l54.7 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-54.7 0c-12.3 28.3-40.5 48-73.3 48s-61-19.7-73.3-48L32 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l246.7 0c12.3-28.3 40.5-48 73.3-48zM192 64a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm73.3 0L480 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l-214.7 0c-12.3 28.3-40.5 48-73.3 48s-61-19.7-73.3-48L32 128C14.3 128 0 113.7 0 96S14.3 64 32 64l86.7 0C131 35.7 159.2 16 192 16s61 19.7 73.3 48z" />
+                    </svg>
+                  </button>
+                  <ul class="v-player-controls__speed-options">
+                    <li data-speed="2" class="v-player-controls__speed-item">2</li>
+                    <li data-speed="1.5" class="v-player-controls__speed-item">1.5</li>
+                    <li data-speed="1.25" class="v-player-controls__speed-item">1.25</li>
+                    <li data-speed="1" class="v-player-controls__speed-item _active">Обычная</li>
+                    <li data-speed="0.75" class="v-player-controls__speed-item">0.75</li>
+                    <li data-speed="0.5" class="v-player-controls__speed-item">0.5</li>
+                    <li data-speed="0.25" class="v-player-controls__speed-item">0.25</li>
+                  </ul>
+                </div>
+                <button class="v-player-controls__in-window v-player-button" type="button" data-in-window>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M432 64H208c-8.8 0-16 7.2-16 16V96H128V80c0-44.2 35.8-80 80-80H432c44.2 0 80 35.8 80 80V304c0 44.2-35.8 80-80 80H416V320h16c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16zM0 192c0-35.3 28.7-64 64-64H320c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192zm64 32c0 17.7 14.3 32 32 32H288c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32 14.3-32 32z" />
+                  </svg>
+                </button>
+                <button class="v-player-controls__fullscreen v-player-button" type="button" data-fullscreen>
+                  <svg class="icon-full-in" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                      d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z" />
+                  </svg>
+                  <svg class="icon-full-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                      d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V64zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32H96v64c0 17.7 14.3 32 32 32s32-14.3 32-32V352c0-17.7-14.3-32-32-32H32zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V64zM320 320c-17.7 0-32 14.3-32 32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H320z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 40px; line-height: 1.4; font-size: 21px;">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid nihil, beatae tenetur aspernatur facilis
+          atque inventore omnis quaerat fugiat, est animi odio assumenda laboriosam reprehenderit ipsam reiciendis id
+          voluptas corporis quo? Recusandae, est! Natus earum ipsa, quam maiores sequi atque autem! Beatae ratione
+          dolores quos, accusamus repellat nisi, similique eum facere ea voluptatum veniam dolorem impedit sapiente hic
+          porro nam eveniet optio omnis iste exercitationem, repudiandae explicabo ut. Aspernatur illum, deleniti nobis,
+          beatae quidem ullam vel, veniam fugit expedita porro dicta maxime adipisci distinctio. Ad mollitia eligendi
+          odio iure harum veritatis iusto numquam odit sed, nobis temporibus quis expedita, fugit officiis magnam
+          corrupti non dolorem obcaecati ullam eos delectus ut vero debitis maxime? Amet ut possimus rem sunt unde!
+          Eligendi saepe porro vel, provident nesciunt totam harum eos modi nulla expedita, sunt quisquam doloremque
+          fuga quis libero, illo sed? Explicabo excepturi impedit cum at nihil voluptatem, deserunt fuga voluptatibus
+          ipsa iste praesentium blanditiis reprehenderit nam expedita, fugit natus voluptatum numquam? Nobis voluptatem
+          molestias alias. Beatae, maxime. Ducimus suscipit debitis cumque id, quasi, inventore amet assumenda est
+          veritatis atque enim facere mollitia tempore vero quis dolorem! Libero voluptatem ipsam veniam nemo quia?
+          Nihil, tenetur? Sit labore, eum eos natus iusto animi molestiae, nesciunt reiciendis temporibus nam sequi
+          cupiditate error deserunt officia quis praesentium. Vero eos obcaecati illo fuga modi labore natus quos atque
+          exercitationem. Officiis itaque voluptatum praesentium nemo distinctio aperiam tempore molestias consequuntur!
+          Mollitia numquam qui, delectus reprehenderit, fugiat inventore quae itaque optio nihil dolorum magni fuga
+          perspiciatis sed nam? Vero doloribus quos dolorem aperiam veritatis voluptatum quis sed? Laboriosam eligendi
+          mollitia nulla veritatis ipsam quos totam, ullam atque voluptates dolores, sequi deleniti ipsum cum reiciendis
+          delectus sunt iusto officia consequuntur quae quaerat laborum? Illo minima porro nostrum, eveniet recusandae
+          atque dignissimos provident unde, amet veritatis magni obcaecati assumenda maxime! Ea a dignissimos beatae
+          provident est voluptate nisi quasi rem expedita ipsam eius sapiente explicabo repudiandae, veniam sed. Vitae
+          beatae molestias neque, harum consequatur laboriosam? Neque explicabo in molestiae, ratione vel delectus
+          mollitia eligendi eveniet molestias nam debitis sint quo culpa voluptate fugit voluptatibus cum veritatis!
+          Consequuntur ratione eligendi temporibus blanditiis, cupiditate ipsum eos saepe est ea alias sed iste libero
+          nam dolor unde dolore eveniet voluptates ullam provident, molestias inventore quis suscipit commodi
+          perferendis? Iusto voluptates, animi officiis libero nesciunt, odio quibusdam mollitia amet voluptatem, vitae
+          adipisci. Quo a reprehenderit porro aut voluptate minus amet quod repudiandae reiciendis repellat ullam
+          adipisci sequi sit, aperiam illum voluptatum ipsum ea laborum nobis fuga nihil labore voluptas? Laudantium
+          exercitationem nulla, similique necessitatibus incidunt quasi assumenda, molestiae odit soluta voluptatem quia
+          consectetur! Itaque nobis ut quo sapiente quidem fugit harum iure consectetur, nostrum maxime. Doloribus animi
+          error dolorum odio necessitatibus soluta recusandae tenetur, nemo iusto est veritatis unde perferendis
+          distinctio ex quasi qui atque quia eveniet, temporibus quas incidunt assumenda porro natus suscipit! Nulla
+          iusto illo quos deleniti obcaecati officia, assumenda explicabo similique hic doloribus iure accusamus at,
+          veritatis reiciendis. At, maxime aliquid! Et fugiat sed impedit omnis eveniet dolorem recusandae repudiandae
+          quia consequatur reiciendis. Aliquid itaque, facilis, quam error neque incidunt deleniti sapiente ullam
+          obcaecati ducimus nesciunt, eius quia. A laudantium saepe, quidem adipisci soluta cupiditate itaque, sequi
+          repudiandae ad ullam similique beatae dicta? Saepe quisquam dolor quam sed maiores quibusdam consectetur rem
+          deserunt cupiditate natus possimus delectus adipisci odit pariatur a vel magnam repellendus, voluptatum
+          excepturi perspiciatis. Obcaecati quam nemo impedit non, unde, sunt rerum ducimus distinctio nostrum dolore
+          doloribus eaque aliquid dolores sed assumenda commodi esse harum nam numquam magnam praesentium? Ex sit
+          veritatis optio quos fugit debitis. Inventore, reiciendis fuga ducimus natus excepturi delectus repudiandae
+          dolore architecto ipsa vitae similique culpa quos, odit expedita alias aliquid. Autem pariatur perspiciatis
+          vero, ab placeat omnis enim, exercitationem est vel veniam quos. Delectus autem similique saepe tempore. Optio
+          aliquid amet, perspiciatis quibusdam unde alias culpa doloribus voluptatum itaque a, voluptatem sunt,
+          dignissimos fugit odit. Numquam quod distinctio deserunt iusto recusandae quia aliquid sed, sunt qui aut porro
+          adipisci earum, natus dolores. Sequi libero animi delectus architecto vel fuga maiores, quae magnam nisi esse
+          non officia adipisci expedita aliquid distinctio ipsum? Et eaque fugit inventore nisi animi molestiae
+          exercitationem repudiandae doloremque, quibusdam voluptatum eum numquam beatae excepturi dolore totam unde
+          eligendi consectetur perferendis, possimus accusantium sunt maxime nesciunt sed accusamus. Ducimus quasi nemo
+          maiores repudiandae amet architecto provident repellat facere id, libero, minima error ratione non saepe sed
+          ad sit tenetur, iusto minus? Laudantium laboriosam tempora totam deserunt quibusdam, suscipit vitae saepe
+          assumenda repellendus, facilis porro. Illo et sapiente dolor molestiae. Pariatur nulla, placeat numquam
+          consectetur dolores veniam modi voluptas repellendus velit. Ex veritatis, sapiente est, adipisci deserunt
+          voluptatem repellendus repudiandae ducimus facere ipsum sint doloremque error consectetur, molestiae excepturi
+          sed officiis reprehenderit quisquam? Inventore harum accusamus suscipit quasi nostrum distinctio nam
+          voluptatem maxime perspiciatis quisquam dolores vitae doloribus beatae labore, modi, illo corrupti dolor.
+          Voluptatum sit vel soluta ab praesentium quod doloremque reprehenderit quisquam? At non quos nostrum amet
+          commodi dolor, exercitationem illo suscipit fuga distinctio itaque veritatis provident excepturi a sunt
+          nesciunt fugit! Nihil adipisci qui nostrum nesciunt itaque atque laborum tempora dolorum repellat ad pariatur,
+          sunt, sint quod velit mollitia inventore, incidunt tenetur numquam corrupti aliquid eveniet. Sunt, repellat.
+          Eveniet aspernatur voluptas neque ipsum sapiente officia provident dolor officiis error quos quidem nesciunt,
+          exercitationem mollitia! Impedit atque provident iste porro ad, tempora, hic, animi excepturi veritatis
+          tenetur inventore doloremque perferendis dolorem quibusdam molestias! Molestiae accusantium earum obcaecati
+          corrupti repudiandae? Repellat natus ad enim et repudiandae consequatur, nostrum debitis temporibus
+          necessitatibus voluptatem iste porro. Qui nulla beatae ullam pariatur repellendus consequatur cumque, enim
+          quos at vero iste, quis praesentium laborum itaque dolore quasi sequi tempore ab! Distinctio quaerat
+          cupiditate adipisci numquam velit laborum vitae hic sed optio veniam maiores soluta aut, architecto,
+          repellendus atque earum quia eius vero pariatur doloribus odit dignissimos laboriosam eos ab! A debitis magni
+          nemo dolores. Laudantium ea, reprehenderit dolores nostrum, delectus neque, quaerat itaque distinctio
+          exercitationem esse accusamus expedita! Veritatis qui cupiditate ducimus repellendus voluptatibus nulla illum
+          blanditiis, harum reiciendis iure magni modi dolorum sapiente tempora.
+        </p>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

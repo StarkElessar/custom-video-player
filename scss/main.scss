@@ -1,0 +1,18 @@
+@use 'sass:math';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+// Подключение sass функций и миксинов и рассширений стилей =====================
+@import 'config/functions';
+@import 'config/mixins';
+
+// Подключение переменных =======================================================
+@import 'config/vars';
+
+// Обнуление ====================================================================
+@import 'config/reset';
+
+// Общие параметры, шаблоны(заготовки) и вспомагательные классы =================
+@import 'config/base';
+
+@import 'vPlayer';
