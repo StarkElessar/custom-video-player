@@ -108,7 +108,10 @@ function vPlayerInit() {
 
     function handlePlayerKeyDown({ code }) {
       const keyDownMapping = {
-        'Space': () => setPlayPause(),
+        'Space': () => {
+          event.preventDefault();
+          setPlayPause();
+        },
         'KeyK': () => setPlayPause(),
         'KeyJ': () => setRewindVideo('back'),
         'KeyL': () => setRewindVideo('next'),
