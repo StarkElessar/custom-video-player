@@ -106,14 +106,12 @@ function vPlayerInit() {
 
     let lastVolumeValue = video.volume
 
-    function handlePlayerKeyDown(event) {
-      event.preventDefault()
-      const { code } = event
-
+    function handlePlayerKeyDown({ code }) {
       const keyDownMapping = {
         'Space': () => setPlayPause(),
         'KeyK': () => setPlayPause(),
         'KeyJ': () => setRewindVideo('back'),
+        'KeyL': () => setRewindVideo('next'),
         'KeyL': () => setRewindVideo('next'),
         'ArrowUp': () => {
           if (video.volume <= 0.9) {
@@ -148,16 +146,15 @@ function vPlayerInit() {
           } else {
             player.classList.replace('_v-sound-on', '_v-sound-off')
           }
-        }
-      }
+        },
+      };
 
-      return keyDownMapping[code]?.()
+			return keyDownMapping[code]?.();
     }
 
     function handlePlayerDoubleClick({ target }) {
-      if (target.closest('.v-player__bottom')) return
-
-      handleFullscreenButtonClick()
+      if (target.closest('.v-player__bottom')) return;
+      handleFullscreenButtonClick();
     }
 
     function handleDocumentClick({ target }) {
